@@ -387,18 +387,24 @@ If your vector is a row vector, your output should be a row vector. If your inpu
 ============================================
 
 function val=longrun(a)
+
 max_num=0;
+
 val=[];
+
 j=1;
+
 last_item=nan;
+
 item_num=0;
+
 for i=1:length(a)
     if a(i)==last_item
         item_num=item_num+1;
         if item_num==max_num
             j=j+1;
             val(j)=a(i);
-            
+           
         elseif item_num>max_num
             max_num=item_num;
             j=1;
@@ -421,6 +427,5 @@ if m>1
     val=val';
 end
 end
-
 ============================================
 
