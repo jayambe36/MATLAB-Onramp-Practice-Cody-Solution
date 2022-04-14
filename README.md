@@ -49,9 +49,9 @@ Output y is 34
 
 ============================================
 
-function y = times2(x)
-  y = x*2;
-end
+    function y = times2(x)
+      y = x*2;
+    end
 
 ============================================
 
@@ -67,9 +67,9 @@ Return the result in output variable SA.
 
 ============================================
 
-function SA = func_frosting(r,h)
-  SA = (pi*r^2)+(2*pi*r*h);
-end
+    function SA = func_frosting(r,h)
+      SA = (pi*r^2)+(2*pi*r*h);
+    end
 
 ============================================
 
@@ -86,9 +86,9 @@ C = (F–32) * 5/9
 
 ============================================
 
-function C = temp_convert(F)
-  C = (F-32)*(5/9)
-end
+    function C = temp_convert(F)
+      C = (F-32)*(5/9)
+    end
 
 ============================================
 
@@ -106,9 +106,9 @@ Return the name of the oldest person in the output variable old_name.
 
 ============================================
 
-function old_name = find_max_age(name,age)
-    old_name=name(find(age==max(age)));
-end
+    function old_name = find_max_age(name,age)
+        old_name=name(find(age==max(age)));
+    end
 
 ============================================
 
@@ -124,10 +124,10 @@ Given N, simulate 1e8 N-sided dice rolls by creating a vector of 1e8 uniformly d
 
 ============================================
 
-function dice_diff = loln(N)  
-dice_diff = mean(randi(N, 1e8,1)) - (N+1)/2;
-%randi(x,y,z) here x denotes the maximum value. y and z represent the size of the matrix yxz
-end
+    function dice_diff = loln(N)  
+    dice_diff = mean(randi(N, 1e8,1)) - (N+1)/2;
+    %randi(x,y,z) here x denotes the maximum value. y and z represent the size of the matrix yxz
+    end
 
 ============================================
 
@@ -162,11 +162,11 @@ cos(θ) x₁ + sin(θ) x₂ = 1
 
 ============================================
 
-function x = solve_lin(theta)
-    A=[cos(theta),sin(theta);-sin(theta),cos(theta)] ; 
-    b=[1;1];
-    x = A\b; 
-end
+    function x = solve_lin(theta)
+        A=[cos(theta),sin(theta);-sin(theta),cos(theta)] ; 
+        b=[1;1];
+        x = A\b;
+    end
 
 ============================================
 
@@ -188,10 +188,10 @@ Assume A = 1 and f = 1 . The vector t should be linearly spaced from 0 to T, wit
 
 ============================================
 
-function y = damped_cos(lambda, T, N)
-  t=0:T/(N-1):T;
-  y = exp(-lambda*t).*cos(2*pi*t);
-end
+    function y = damped_cos(lambda, T, N)
+      t=0:T/(N-1):T;
+      y = exp(-lambda*t).*cos(2*pi*t);
+    end
 
 ============================================
 
@@ -206,10 +206,10 @@ Return the minimum value of y as output m.
 
 ============================================
 
-function m = plot_cos(y, t)
-[m,pos] = min(y);
-plot(t,y,'b--',t(pos),m,'r*');
-end
+    function m = plot_cos(y, t)
+    [m,pos] = min(y);
+    plot(t,y,'b--',t(pos),m,'r*');
+    end
 
 ============================================
 
@@ -228,11 +228,11 @@ The first column is the height in inches. The second column is the weight in pou
 
 ============================================
 
-function bmi = bmi_calculator(hw)  
-    hw(:,1)=hw(:,1)*2.54/100;
-    hw(:,2)=hw(:,2)/2.2;
-    bmi=hw(:,2)./(hw(:,1).^2);
-end
+    function bmi = bmi_calculator(hw)  
+        hw(:,1)=hw(:,1)*2.54/100;
+        hw(:,2)=hw(:,2)/2.2;
+        bmi=hw(:,2)./(hw(:,1).^2);
+    end
 
 ============================================
 
@@ -261,9 +261,9 @@ The output Icrop should be
 
 ============================================
 
-function Icrop = crop_image(I, Rmin, Cmin, Rpix, Cpix)
-  Icrop = I(Rmin:Rmin+Rpix-1,Cmin:Cmin+Cpix-1);
-end
+    function Icrop = crop_image(I, Rmin, Cmin, Rpix, Cpix)
+      Icrop = I(Rmin:Rmin+Rpix-1,Cmin:Cmin+Cpix-1);
+    end
 
 ============================================
 
@@ -282,9 +282,9 @@ return only the names of those hotels with a rating of cutoff value or above as 
 
 ============================================
 
-function good = find_good_hotels(hotels,ratings,cutoff)
-  good = hotels(find(ratings>=cutoff))
-end
+    function good = find_good_hotels(hotels,ratings,cutoff)
+      good = hotels(find(ratings>=cutoff))
+    end
 
 ============================================
 
@@ -301,12 +301,12 @@ Output mpg should contain the MPG of the top N lightest cars (by Weight) in a co
 
 ============================================
 
-function mpg = sort_cars(N)
-    load cars.mat
-    sorted = sortrows (cars,4);
-    mpg = sorted(1:N,2);
-    mpg=mpg{:,:};
-end
+    function mpg = sort_cars(N)
+        load cars.mat
+        sorted = sortrows (cars,4);
+        mpg = sorted(1:N,2);
+        mpg=mpg{:,:};
+    end
 
 ============================================
 
@@ -332,15 +332,15 @@ z = “The inner dimensions are 3 and 2. Matrix multiplication is not possible�
 
 ============================================
 
-function z = in_prod(x,y)
-    [m,n]=size(x);
-    [a,v]=size(y);
-    if(n==a)
-        z=x*y;
-    else
-        z="c";
+    function z = in_prod(x,y)
+        [m,n]=size(x);
+        [a,v]=size(y);
+        if(n==a)
+            z=x*y;
+        else
+            z="c";
+        end
     end
-end
 
 ============================================
 
@@ -363,9 +363,9 @@ Assume that no student in this class has scored below 60. Also note that the map
 
 ============================================
 
-function X = rescale_scores(X)
-    X(:,end)=(X(:,end)-60)/10;
-end
+    function X = rescale_scores(X)
+        X(:,end)=(X(:,end)-60)/10;
+    end
 
 ============================================
 
